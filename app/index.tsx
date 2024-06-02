@@ -10,7 +10,8 @@ export default function Index() {
   const [img1 ,setImg1] = useState(require('../assets/images/star.png'));
   const [img2 ,setImg2] = useState(require('../assets/images/gang.png'));
   const [img3 ,setImg3] = useState(require('../assets/images/video.png'));
-  
+  const [cer ,setCer] = useState(require('../assets/images/certificate.png'));
+  const [ico,setIco] = useState(require('../assets/images/icons.png'));
   return (
     <ImageBackground 
     source={background} 
@@ -105,25 +106,46 @@ export default function Index() {
       </View>
       
       <View style={styles.card1}>
-        <Text>Why should you join AIRBLACK</Text>
+        <Text style={{color:"white",fontSize:30}}>Why should you join AIRBLACK</Text>
         <View style={styles.flex}>
+        <View>
         <Image source={img1} style={{width:90,height:80,marginTop:10}}></Image>
-        <Image source={img2} style={{width:90,height:90}}></Image>
-        <Image source={img3} style={{width:90,height:90}}></Image>
+        <Text style={{color:"white",fontSize:20}}>Do-it-together</Text>
         </View>
+        <View>
+        <Image source={img2} style={{width:90,height:90}}></Image>
+        <Text style={{color:"white",fontSize:20}}>4.8/5</Text>
+        </View>
+        <View>
+        <Image source={img3} style={{width:90,height:90}}></Image>
+        <Text style={{color:"white",fontSize:20}}>over 35000+</Text>
+        </View>
+        </View>
+        <TouchableOpacity style={styles.button} onPress={() => alert('Button Pressed')}>
+        <Text style={styles.buttonText}>Apply Now</Text>
+        </TouchableOpacity>
       </View>
-      <View  style={styles.card2}>
-        
-      </View>
+
       <View  style={styles.card3}>
-        
+        <Text style={{color:"white",fontSize:25}}>Get Certified From  India's Biggest  Beauty Platform</Text>
+        <View>
+        <Image source={cer} style={{width:390,height:290}}></Image>
+        </View>
+        <Text style={{color:"white",fontSize:25}}>Join our growing  community of 35,000+ alumni</Text>
+        <TouchableOpacity style={styles.button} onPress={() => alert('Button Pressed')}>
+        <Text style={styles.buttonText}>Apply Now</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={{backgroundColor:'rgba(1, 0, 0, 0.5)',padding:70}}>
+      <Image source={ico} style={{width:300,height:70}}></Image>
       </View>
     </ScrollView>
     </View>
     </ImageBackground>
   );
 }
-// rgba(1, 0, 0, 0.5)
+// 
 const styles = StyleSheet.create({
   upperCard:{
     width:430,
@@ -136,13 +158,12 @@ const styles = StyleSheet.create({
     margin:7,
   },
   card1:{
-
-  },
-  card2:{
-
+    backgroundColor:"rgba(1, 0, 0, 0.5)",
+    padding:80,
   },
   card3:{
-
+    backgroundColor:'black',
+    padding:50,
   },
   flex:{
     display:'flex',
@@ -174,7 +195,7 @@ button: {
   backgroundColor: '#f56563',
   height: 50,
   width: 400,
-  marginTop:10,
+  marginTop:20,
   padding:12,
   borderRadius: 3,
 },
